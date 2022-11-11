@@ -1,5 +1,10 @@
 import sys
+from pprint import pprint
+
 import argparse
+import subprocess
+import os
+from os.path import isfile, join
 
 
 def parse_options(list_args):
@@ -26,6 +31,14 @@ def parse_options(list_args):
 
 def main(args):
     print(args)
+
+    onlyfiles = [
+        os.path.abspath(join(args.video_folder, f))
+        for f in os.listdir(args.video_folder)
+        if isfile(join(args.video_folder, f))
+    ]
+    pprint(onlyfiles)
+    # subprocess.run("ffmpeg -i input1.mp4 -c copy intermediate1.ts".split())
 
 
 if __name__ == "__main__":
