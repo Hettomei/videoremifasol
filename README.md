@@ -1,2 +1,11 @@
+# Install
 
-python main.py --text "do re me fa sol 2"
+```
+python 3.10.7
+```
+
+# run
+
+```
+python main.py --folder ./demo --text "do re me fa sol"
+```
